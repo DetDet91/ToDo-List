@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Task List</h1>
+      <nav>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+      </nav>
+    </header>
+    <div class="task-container">
+      <div class="task-input">
+        <input
+          type="text"
+          id="task1"
+          name="task1"
+          placeholder="Add your task here..."
+        />
+      </div>
+      <button class="add-btn"><span>Add Task</span></button>
+      <button class="clear-task-btn"><span>Clear Tasks</span></button>
+
+      <ul class="task-list"></ul>
+    </div>
+    <script src="JS/script.js"></script>
+  </body>
+</html>

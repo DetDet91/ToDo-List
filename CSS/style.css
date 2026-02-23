@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #064556;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f7fa;
+  color: #222;
+}
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 15px;
+  max-width: 600px; /* keep content centered nicely */
+  margin: 0 auto;
+}
+.task-input {
+  width: 50%;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #e8f7f6;
+  font-size: medium;
+  font-weight: bold;
+  font-family: "Playwrite NZ Basic", sans-serif;
+}
+input::placeholder {
+  color: #555555;
+}
+.input-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.task-input input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #222;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+.task-input input:focus {
+  border-color: #066b6e;
+  box-shadow: 0 0 5px rgba(6, 107, 110, 0.3);
+  outline: none;
+}
+
+.task-list {
+  margin-top: 20px;
+  list-style-type: none;
+  width: 100%;
+  max-width: 600px;
+  padding: 0;
+}
+.task-list li {
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    opacity 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+.task-list li:hover {
+  background-color: #f0f5f6;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #555;
+  opacity: 0.8;
+}
+
+/* buttons */
+.add-btn,
+.clear-task-btn {
+  padding: 10px 18px;
+  font-size: 15px;
+  border: 1px solid #066b6e;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background: #066b6e;
+  transition:
+    background 0.3s,
+    transform 0.2s;
+}
+
+.add-btn:hover,
+.clear-task-btn:hover {
+  background: #044d50;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .input-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-btn,
+  .clear-task-btn {
+    width: 100%;
+  }
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 12px;
+  font-size: 16px;
+  color: #a00;
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+.delete-btn:hover {
+  transform: scale(1.1);
+  color: #e00;
+}
+
+/* The switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+nav .switch {
+  margin-top: 8px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 28px;
+}
+
+/* The circle inside the slider */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* When checked */
+input:checked + .slider {
+  background-color: #066b6e;
+}
+
+input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #0f1e1f;
+  color: #eee;
+}
+
+.dark header {
+  background: #022f33;
+}
+
+.dark input {
+  background-color: #1f3a3c;
+  color: #fff;
+  border: 1px solid #066b6e;
+}
+
+.dark-mode .task-list li {
+  background-color: #1f3a3c;
+  color: #eee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.dark .add-btn,
+.dark .clear-task-btn {
+  background-color: #066b6e;
+}
